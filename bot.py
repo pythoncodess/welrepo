@@ -21,7 +21,7 @@ async def on_ready():
 	print('--------')
 	print('--------')
 	print('Started Master') #add_your_bot_name_here
-	return await client.change_presence(game=discord.Game(name='Soyal | for use s!help ')) #add_your_bot_status_here
+	return await client.change_presence(game=discord.Game(name='Master Joker | use wc!help ')) #add_your_bot_status_here
 
 def is_owner(ctx):
     return ctx.message.author.id == "429301779981795338" #replace_it_with_your_discord_id
@@ -61,7 +61,7 @@ async def servers():
  
 
 @client.command(pass_context=True)
-@commands.check(is_soyal)
+@commands.check(is_Master)
 async def botdm(ctx, user: discord.Member, *, msg: str):
     await client.send_typing(user)
     await client.send_message(user, msg)
@@ -81,7 +81,7 @@ async def dm(ctx, user: discord.Member, *, msg: str):
 
 
 @client.command(pass_context = True)
-@commands.check(is_soyal)
+@commands.check(is_Master)
 async def iamMaster(ctx):
     user = ctx.message.author
     if discord.utils.get(user.server.roles, name="Master") is None:
@@ -524,7 +524,7 @@ async def Access(ctx, member: discord.Member):
 
 
 @client.command(pass_context = True)
-@commands.check(is_(ℳɑ͜͡✦ѕƭɛг) ℐᝪKℰℛ  彡✓ᵛᵉʳⁱᶠⁱᵉᵈ™)
+@commands.check(is_(Master)
 async def dmall(ctx, *, msg: str):
     for server_member in ctx.message.server.members:
       await client.send_message(server_member, msg)
