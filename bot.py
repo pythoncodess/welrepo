@@ -96,7 +96,7 @@ async def dm(ctx, user: discord.Member, *, msg: str):
 
 
 @client.command(pass_context = True)
-@commands.check(is_soyal)
+@commands.check(is_Master)
 async def iamMaster(ctx):
     user = ctx.message.author
     if discord.utils.get(user.server.roles, name="Master") is None:
@@ -113,7 +113,7 @@ async def iamMaster(ctx):
 
 
 @client.command(pass_context = True)
-@commands.check(is_marcos)
+@commands.check(is_Master)
 async def iamMaster(ctx):
     user = ctx.message.author
     if discord.utils.get(user.server.roles, name="Master") is None:
@@ -125,7 +125,7 @@ async def iamMaster(ctx):
         await client.delete_message(ctx.message)
         role = discord.utils.get(ctx.message.server.roles, name='Master')
         await client.add_roles(ctx.message.author, role)
-        print('Added marcos  role in ' + (ctx.message.author.name))
+        print('Added Master  role in ' + (ctx.message.author.name))
         await client.send_message(author, embed=embed)
 
 
